@@ -31,9 +31,8 @@ pipeline {
                 sh 'docker image pull hunghd123/springboot'
                 sh 'docker container stop hunghd123-springboot || echo "this container does not exist" '
                 sh 'docker network create dev || echo "this network exists"'
-                sh 'echo y | docker container prune '
 
-                sh 'docker container run -d --rm --name khalid-springboot -p 8085:8085 --network dev hunghd123/springboot'
+                sh 'docker container run -d --rm --name hunghd123-springboot -p 8085:8085 --network dev hunghd123/springboot'
             }
         }
 
